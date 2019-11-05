@@ -1,0 +1,9 @@
+
+<div *ngFor="let item of products">
+ {{item.name}}
+ {{item.price}}
+ {{item.uid}}
+ {{item.rating}}
+ <a (click)="addToCart($event,item)">Add to cart</a>
+</div>
+ <a (click)="showProducts()">Show Cart</a>
