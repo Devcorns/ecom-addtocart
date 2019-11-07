@@ -1,9 +1,36 @@
 
-<div *ngFor="let item of products">
- {{item.name}}
- {{item.price}}
- {{item.uid}}
- {{item.rating}}
- <a (click)="addToCart($event,item)">Add to cart</a>
+<span>{{productItem}}</span>
+<a (click)="showProducts()">Show Cart</a>
+<a (click)="resetCart()">Reset Cart</a>
+<div class="product-section">
+    <div *ngFor="let item of products"  class="product-main">
+        <div class="products" id="{{item.uid}}">
+            <h4>
+                {{item.name}}
+            </h4>
+            <p>
+                {{item.price}}
+            </p>
+            <p >
+                {{item.uid}}
+            </p>
+            <p>
+                {{item.rating}}
+            </p>
+            <div class="product-qty">
+                <a (click)="increaseQty($event)">+</a>
+                <a class="qntty">{{item.qty}}</a>
+                <a (click)="decreaseQty($event)">-</a>
+            </div>
+            <a (click)="addToCart($event,item)" class="btn btn-primary d-block text-center">Add to cart</a>
+        </div>
+        
+    </div>
 </div>
- <a (click)="showProducts()">Show Cart</a>
+
+<p>
+1.35 cr 4.5 2600 Saundrayam <br />
+1.80 cr 4.5 2600 Cleocounrty <br />
+1.10 cr 4.5 3bhk 1915 Ats 
+</p>
+
